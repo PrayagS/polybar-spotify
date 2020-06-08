@@ -11,7 +11,7 @@ This polybar module shows details regarding the currently playing song on Spotif
 
 ## Polybar config
 
-```
+```ini
 [module/spotify]
 type = custom/script
 tail = true
@@ -22,7 +22,7 @@ exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
 
 The controls can be easily configured using the following modules. Again, make sure you have [playerctl](https://github.com/altdesktop/playerctl) installed.
 
-```
+```ini
 [module/spotify-prev]
 type = custom/script
 exec = echo "玲"
