@@ -30,10 +30,11 @@ exec = echo "玲"
 format = <label>
 click-left = playerctl previous spotify
 
-[module/spotify-pause]
-type = custom/script
-exec = echo "懶"
-format = <label>
+[module/spotify-play-pause]
+type = custom/ipc
+hook-0 = echo ""
+hook-1 = echo "契"
+initial = 1
 click-left = playerctl play-pause spotify
 
 [module/spotify-next]
@@ -42,6 +43,8 @@ exec = echo "怜"
 format = <label>
 click-left = playerctl next spotify
 ```
+
+**NOTE:** The above given play-pause module requires IPC support enabled for its parent bar. That can be done by adding `enable-ipc = true` in your bar config. Also make sure to replace `polybar bottom` in [get_spotify_status.sh](get_spotify_status.sh) with the name of the parent bar to get its pid.
 
 ## Customization
 
