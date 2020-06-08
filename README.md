@@ -8,3 +8,47 @@ This polybar module shows details regarding the currently playing song on Spotif
 
 - [playerctl](https://github.com/altdesktop/playerctl) - To interface with Spotify
 - [zscroll](https://github.com/noctuid/zscroll) - To scroll the fetched text
+
+## Polybar config
+
+```
+[module/spotify]
+type = custom/script
+tail = true
+format-prefix = "  "
+format = <label>
+exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+```
+
+The controls can be easily configured using the following modules. Again, make sure you have [playerctl](https://github.com/altdesktop/playerctl) installed.
+
+```
+[module/spotify-prev]
+type = custom/script
+exec = echo "玲"
+format = <label>
+click-left = playerctl previous spotify
+
+[module/spotify-pause]
+type = custom/script
+exec = echo "懶"
+format = <label>
+click-left = playerctl play-pause spotify
+
+[module/spotify-next]
+type = custom/script
+exec = echo "怜"
+format = <label>
+click-left = playerctl next spotify
+```
+
+## Customization
+
+- The format of the fetched metadata can be changed in [get_spotify_status.sh](get_spotify_status.sh). This line needs to be changed
+  ```sh
+  playerctl metadata spotify --format "{{ title }} - {{ artist }}"
+  ```
+  More details on what attributes can be fetched can be found [here](https://github.com/altdesktop/playerctl/#printing-properties-and-metadata).
+- The scrolling text can be configured in [scroll_spotify_status.sh](scroll_spotify_status.sh). 
+  - The length can be configured using `-l` and delay using `-d`.
+  - The separators between the infinitely scrolling text can be configured using `--before-text` and `--after-text` parameters.
