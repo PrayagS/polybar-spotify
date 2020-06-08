@@ -45,6 +45,7 @@ click-left = playerctl next spotify
 
 ## Customization
 
+- Since I'm using [playerctl](https://github.com/altdesktop/playerctl), this script will work with any of the players supported by it. For instance, VLC, Chromium, Audacious, etc. It can even be used with multiple players running simultaneously. More info [here](https://github.com/altdesktop/playerctl#selecting-players-to-control).
 - The format of the fetched metadata can be changed in [get_spotify_status.sh](get_spotify_status.sh). This line needs to be changed
   ```sh
   playerctl metadata spotify --format "{{ title }} - {{ artist }}"
