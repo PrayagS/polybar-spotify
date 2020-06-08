@@ -54,3 +54,4 @@ click-left = playerctl next spotify
 - The scrolling text can be configured in [scroll_spotify_status.sh](scroll_spotify_status.sh). 
   - The length can be configured using `-l` and delay using `-d`.
   - The separators between the infinitely scrolling text can be configured using `--before-text` and `--after-text` parameters.
+  More info about zscroll's parameters can be found in `man zscroll`.    
