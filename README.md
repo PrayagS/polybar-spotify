@@ -44,7 +44,7 @@ format = <label>
 click-left = playerctl next spotify
 ```
 
-**NOTE:** The above given play-pause module requires IPC support enabled for its parent bar. That can be done by adding `enable-ipc = true` in your bar config. Also make sure to replace `polybar bottom` in [get_spotify_status.sh](get_spotify_status.sh) with the name of the parent bar to get its pid.
+NOTE: The above given play-pause module requires IPC support enabled for its parent bar. That can be done by adding `enable-ipc = true` in your bar config. Also make sure to replace `polybar bottom` in [get_spotify_status.sh](get_spotify_status.sh) with the name of the parent bar to get the correct pid.
 
 ## Customization
 
