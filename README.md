@@ -30,31 +30,32 @@ PLAYER="playerctld"
 FORMAT="{{ title }} - {{ artist }}"
 ```
 - Add the following in your polybar config.
-Ignore the weird looking symbols. Just paste the ones you want from [Font Awesome](https://fontawesome.com/cheatsheet) or [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet).
+Ignore the weird looking symbols. They look different due to the wrong font used here. Just paste the ones you want from like [Font Awesome](https://fontawesome.com/cheatsheet) or [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet).
 ```ini
 [module/spotify]
 type = custom/script
 tail = true
-format-prefix = "  "
+; prefix symbol is shown before the text
+format-prefix = "<prefix-symbol>"
 format = <label>
 exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
 
 [module/spotify-prev]
 type = custom/script
-exec = echo "玲"
+exec = echo "<previous-song-symbol>"
 format = <label>
 click-left = playerctl previous spotify
 
 [module/spotify-play-pause]
 type = custom/ipc
-hook-0 = echo ""
-hook-1 = echo "契"
+hook-0 = echo "<playing-symbol>"
+hook-1 = echo "<pause-symbol>"
 initial = 1
 click-left = playerctl play-pause spotify
 
 [module/spotify-next]
 type = custom/script
-exec = echo "怜"
+exec = echo "next-song-symbol"
 format = <label>
 click-left = playerctl next spotify
 ```
