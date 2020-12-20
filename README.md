@@ -30,7 +30,7 @@ PLAYER="playerctld"
 FORMAT="{{ title }} - {{ artist }}"
 ```
 - Add the following in your polybar config.
-Ignore the weird looking symbols. They look different due to the wrong font used here. Just paste the ones you want from like [Font Awesome](https://fontawesome.com/cheatsheet) or [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet).
+Make sure to place the desired symbols for each module. You can get them from like [Font Awesome](https://fontawesome.com/cheatsheet) or [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet).
 ```ini
 [module/spotify]
 type = custom/script
