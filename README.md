@@ -7,11 +7,30 @@ This polybar module shows details regarding the currently playing song on Spotif
 
 ## Dependencies
 
-- [playerctl](https://github.com/altdesktop/playerctl#installing) - To interface with Spotify
+- [playerctl](https://github.com/altdesktop/playerctl#installing) - To interface with Spotify and other MPRIS supporting players
 - [zscroll](https://github.com/noctuid/zscroll#installation) - To scroll the fetched text
 
-## Polybar config
+## Setup
 
+- Make sure to go through and edit the required variables in [get_spotify_status.sh](get_spotify_status.sh) as shown below. Especially the `PARENT_BAR` one as without its correct value, toggling the play-pause symbol wouldn't work.
+```sh
+# The name of polybar bar which houses the main spotify module and the control modules.
+PARENT_BAR="now-playing"
+
+# Set the source audio player here.
+# Players supporting the MPRIS spec are supported.
+# Examples: spotify, vlc, chrome, mpv and others.
+# Use `playerctld` to detect the latest player.
+# See more here: https://github.com/altdesktop/playerctl/#selecting-players-to-control
+PLAYER="playerctld"
+
+# Format of the information displayed
+# Eg. {{ artist }} - {{ album }} - {{ title }}
+# See more attributes here: https://github.com/altdesktop/playerctl/#printing-properties-and-metadata
+FORMAT="{{ title }} - {{ artist }}"
+```
+- Add the following in your polybar config.
+Ignore the weird looking symbols. Just paste the ones you want from [Font Awesome](https://fontawesome.com/cheatsheet) or [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet).
 ```ini
 [module/spotify]
 type = custom/script
@@ -19,11 +38,7 @@ tail = true
 format-prefix = "  "
 format = <label>
 exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
-```
 
-The controls can be easily configured using the following modules. Again, make sure you have [playerctl](https://github.com/altdesktop/playerctl) installed.
-
-```ini
 [module/spotify-prev]
 type = custom/script
 exec = echo "玲"
@@ -44,7 +59,7 @@ format = <label>
 click-left = playerctl next spotify
 ```
 
-NOTE: The above given play-pause module requires IPC support enabled for its parent bar. That can be done by adding `enable-ipc = true` in your bar config. Also make sure to replace `polybar bottom` in [get_spotify_status.sh](get_spotify_status.sh) with the name of the parent bar to get the correct pid.
+NOTE: The above given play-pause module requires IPC support enabled for its parent bar. That can be done by adding `enable-ipc = true` in your bar config.
 
 ## Customization
 
