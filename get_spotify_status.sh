@@ -20,7 +20,7 @@ FORMAT="{{ title }} - {{ artist }}"
 update_hooks() {
     while IFS= read -r id
     do
-        polybar-msg -p "$id" hook playerctl-play-pause $2 1>/dev/null 2>&1
+        polybar-msg -p "$id" hook spotify-play-pause $2 1>/dev/null 2>&1
     done < <(echo "$1")
 }
 
