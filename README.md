@@ -44,20 +44,20 @@ exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
 type = custom/script
 exec = echo "<previous-song-symbol>"
 format = <label>
-click-left = playerctl previous spotify
+click-left = playerctl previous -p spotify
 
 [module/spotify-play-pause]
 type = custom/ipc
 hook-0 = echo "<playing-symbol>"
 hook-1 = echo "<pause-symbol>"
 initial = 1
-click-left = playerctl play-pause spotify
+click-left = playerctl play-pause -p spotify
 
 [module/spotify-next]
 type = custom/script
 exec = echo "next-song-symbol"
 format = <label>
-click-left = playerctl next spotify
+click-left = playerctl next -p spotify
 ```
 
 NOTE: The above given play-pause module requires IPC support enabled for its parent bar. That can be done by adding `enable-ipc = true` in your bar config.
