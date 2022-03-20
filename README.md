@@ -39,7 +39,7 @@ interval = 1
 ; prefix symbol is shown before the text
 format-prefix = "<prefix-symbol>"
 format = <label>
-exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+exec = ~/.config/polybar/scripts/get_spotify_status.sh
 
 [module/spotify-prev]
 type = custom/script
