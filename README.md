@@ -35,6 +35,7 @@ Make sure to place the desired symbols for each module. You can get them from li
 [module/spotify]
 type = custom/script
 tail = true
+interval = 1
 ; prefix symbol is shown before the text
 format-prefix = "<prefix-symbol>"
 format = <label>
