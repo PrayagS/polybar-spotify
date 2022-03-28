@@ -63,6 +63,10 @@ click-left = playerctl next -p spotify
 
 NOTE: The above given play-pause module requires IPC support enabled for its parent bar. That can be done by adding `enable-ipc = true` in your bar config.
 
+### Support for KDE panel
+
+To have this bar show up in your KDE panel, see #21.
+
 ## Customization
 
 - Since I'm using [playerctl](https://github.com/altdesktop/playerctl), this script will work with any of the players supported by it. For instance, VLC, Chromium, Audacious, etc. It can even be used with multiple players running simultaneously. More info [here](https://github.com/altdesktop/playerctl#selecting-players-to-control).
