@@ -40,6 +40,15 @@ interval = 1
 format-prefix = "<prefix-symbol>"
 format = <label>
 exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+;; label-NAME-maxlen
+; label-maxlen = 15
+;; label-NAME-minlen
+; label-minlen = 9
+;; after truncate align to
+;; label-NAME-alignment
+; label-alignment = center
+;; label-NAME-ellipsis to show ...
+; label-ellipsis = false
 
 [module/spotify-prev]
 type = custom/script
