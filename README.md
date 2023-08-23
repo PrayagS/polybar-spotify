@@ -31,6 +31,8 @@ FORMAT="{{ title }} - {{ artist }}"
 ```
 - Add the following in your polybar config.
 Make sure to place the desired symbols for each module. You can get them from like [Font Awesome](https://fontawesome.com/cheatsheet) or [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet).
+
+- Replace `spotify` in the `click-left` property with your desired player name in `[module/spotify-prev]`, `[module/spotify-play-pause]` and `[module/spotify-next]` to make the media control button function properly. 
 ```ini
 [module/spotify]
 type = custom/script
@@ -45,6 +47,9 @@ exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
 type = custom/script
 exec = echo "<previous-song-symbol>"
 format = <label>
+; Replace `spotify` with your desired player name
+; Use `playerctld` to detect the latest player.
+; Eg. click-left = playerctl previous -p playerctld
 click-left = playerctl previous -p spotify
 
 [module/spotify-play-pause]
@@ -52,12 +57,18 @@ type = custom/ipc
 hook-0 = echo "<playing-symbol>"
 hook-1 = echo "<pause-symbol>"
 initial = 1
+; Replace `spotify` with your desired player name
+; Use `playerctld` to detect the latest player.
+; Eg. click-left = playerctl previous -p playerctld
 click-left = playerctl play-pause -p spotify
 
 [module/spotify-next]
 type = custom/script
 exec = echo "next-song-symbol"
 format = <label>
+; Replace `spotify` with your desired player name
+; Use `playerctld` to detect the latest player.
+; Eg. click-left = playerctl previous -p playerctld
 click-left = playerctl next -p spotify
 ```
 
