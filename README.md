@@ -65,7 +65,7 @@ NOTE: The above given play-pause module requires IPC support enabled for its par
 
 ### Support for KDE panel
 
-To have this bar show up in your KDE panel, see #21.
+To have this bar show up in your KDE panel, see PrayagS/polybar-spotify#21.
 
 ## Customization
 
