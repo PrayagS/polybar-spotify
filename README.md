@@ -28,6 +28,12 @@ PLAYER="playerctld"
 # Eg. {{ artist }} - {{ album }} - {{ title }}
 # See more attributes here: https://github.com/altdesktop/playerctl/#printing-properties-and-metadata
 FORMAT="{{ title }} - {{ artist }}"
+
+# Reset text position when paused.
+# Default is 0, set to 1 to enable.
+# This option makes it reset text to start of format instead of
+# leaving it scrolled in the middle.
+RESET_ON_PAUSE=0
 ```
 - Add the following in your polybar config.
 Make sure to place the desired symbols for each module. You can get them from like [Font Awesome](https://fontawesome.com/cheatsheet) or [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet).
