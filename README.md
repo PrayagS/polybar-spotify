@@ -79,3 +79,7 @@ To have this bar show up in your KDE panel, see PrayagS/polybar-spotify#21.
   - The length can be configured using `-l` and delay using `-d`.
   - The separators between the infinitely scrolling text can be configured using `--before-text` and `--after-text` parameters.  
   More info about zscroll's parameters can be found in `man zscroll`.    
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=PrayagS/polybar-spotify&type=Date)](https://star-history.com/#PrayagS/polybar-spotify&Date)
